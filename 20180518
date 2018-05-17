@@ -16,3 +16,25 @@ error CS1562: Outputs without source must have the /out option specified
 
 C:\Users\xxx>
 
+using System;
+namespace HelloWorldApplication
+{
+	class HelloWorld
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Hello, Shin");
+			Console.ReadKey();
+		}
+	}
+}
+
+When you could see something like:
+>
+Microsoft (R) Visual C# Compiler version 4.0.30319.17929
+for Microsoft (R) .NET Framework 4.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+>
+
+this means you have succeeded to compile your source file. And if you are lucky enough, you will successfully run the compiled file.
+
