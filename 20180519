@@ -57,3 +57,34 @@ namespace ConsoleApp2
         }
     }
 }
+
+
+c# property, 抽象属性声明不提供属性访问器的实现，它只声明该类支持属性，而将访问器实现留给派生类。下面的示例演示如何实现从基类继承的抽象属性
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        public static int AppleCount
+        {
+            get;
+            set;
+         
+        }
+        static void Main(string[] args)
+        {
+            Program.AppleCount = 345;
+            Console.WriteLine(Program.AppleCount);
+            Console.ReadLine();
+        }
+    }
+}
+
+如果不是抽象属性的情况下不提供任何的实现,那么就相当于是默认的get和set方法。
