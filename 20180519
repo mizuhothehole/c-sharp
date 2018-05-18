@@ -1,0 +1,59 @@
+C sharp, how to use the basic collections.
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            System.Collections.ArrayList arrayList = new System.Collections.ArrayList();
+            System.Collections.Hashtable hashtable = new System.Collections.Hashtable();
+            for (int a = 0; a < 10; a++)
+            {
+                arrayList.Add(a);
+                arrayList.Add(1);
+                hashtable.Add(a, a);
+            }
+            Console.ReadKey(); 
+            foreach (int t in arrayList)
+            {
+                Console.WriteLine(t);
+            }
+            Console.ReadKey();
+            IEnumerator ie = arrayList.GetEnumerator();
+            while (ie.MoveNext())
+            {
+                Console.WriteLine(ie.Current);
+            }
+            Console.ReadKey();
+            foreach (DictionaryEntry t in hashtable)
+            {
+                Console.WriteLine(t.Key);
+                Console.WriteLine(t.Value);
+            }
+            Console.ReadKey();
+            IDictionaryEnumerator enumerator = hashtable.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Key);
+                Console.WriteLine(enumerator.Value);
+            }
+            Console.ReadKey();
+            IEnumerator ie2 = arrayList.GetEnumerator();
+            Console.Write("starting......");
+            while (ie2.MoveNext())
+            {
+                Console.Write(ie2.Current);
+            }
+            Console.Write("ending......");
+            Console.ReadKey(); 
+        }
+    }
+}
