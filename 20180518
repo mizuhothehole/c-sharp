@@ -75,3 +75,66 @@ namespace HelloWorldApplication
 		}
 	}
 }
+
+C sharp is key word and property usage:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Qin qin = new Qin();
+			qin.A = 22;
+			Console.WriteLine(qin.A);
+			Console.ReadKey();
+			Qin qin2 = qin;
+			Console.WriteLine(qin2.A);
+			Console.ReadKey();
+			qin2.A = 33;
+			Console.WriteLine(qin2.A);
+			Console.ReadKey();
+			QinIFImpl qinIFImpl = new QinIFImpl();
+			Console.WriteLine(qinIFImpl is QinIF);
+			Console.ReadKey(); 
+			QinClassExtension classExtension = new QinClassExtension();
+			Console.WriteLine(classExtension is QinIF);
+			Console.ReadKey();
+		}
+	}
+
+	interface QinIF
+	{
+	}
+
+	class QinIFImpl : QinIF
+	{
+
+	}
+
+	class QinClassExtension : QinIFImpl
+	{
+	}
+
+	struct Qin
+	{
+		private int a;
+		public int A
+		{
+			get
+			{
+				return this.a;
+			}
+			set
+			{
+				a = value;
+			}
+		}
+	}
+}
