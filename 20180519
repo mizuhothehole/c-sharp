@@ -88,3 +88,69 @@ namespace ConsoleApp2
 }
 
 如果不是抽象属性的情况下不提供任何的实现,那么就相当于是默认的get和set方法。
+
+---------------------------------------------------------------------
+关于c#里面的委托：
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        public delegate string Delegate(int d);
+        public static int AppleCount
+        {
+            get;
+            set;
+         
+        }
+        static void Main(string[] args)
+        {
+            Program.AppleCount = 345;
+            Console.WriteLine(Program.AppleCount);
+            Console.ReadLine();
+            Delegate de = new Delegate(Program.Mss);
+            Console.WriteLine(de(2));
+            Console.ReadKey();
+            Program p = new Program();
+            Delegate de2 = new Delegate(p.Xss);
+            Console.WriteLine(de2(2));
+            Delegate de3 = de + de2;
+            Console.WriteLine(de3(2));
+            Console.ReadKey();
+
+        }
+
+        public static string Mss(int m)
+        {
+            Console.WriteLine("Qin...Mss111");
+            return "mm";
+        }
+
+        public string Xss(int da)
+        {
+            Console.WriteLine("Chuan...Xss222");
+            return "xxx" + da;
+        }
+    }
+}
+
+输出如下：
+345
+
+Qin...Mss111
+mm
+Chuan...Xss222
+xxx2
+Qin...Mss111
+Chuan...Xss222
+xxx2
+
+可以看到委托的特性是，虽然很自由，可是，参数和返回值都必须是一样的。
+而且那个加减运算，只不过是分步进行调用。所以局限性还是有的。
