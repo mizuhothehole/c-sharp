@@ -38,3 +38,40 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 this means you have succeeded to compile your source file. And if you are lucky enough, you will successfully run the compiled file.
 
+using System;
+namespace HelloWorldApplication
+{
+	class HelloQin
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Hello, Shin");
+			Console.ReadKey();
+			Console.WriteLine("Please enter the needed number you want");
+			Console.ReadKey();
+			if(true)
+			{
+				Console.WriteLine("Now you see how to use if ");
+			}
+			Console.ReadKey();
+			if(!false)
+			{
+				Console.WriteLine("Now you see how to use false and the !");
+			}
+			Console.ReadKey();
+			for(int a = 1; a < 100; a ++)
+			{
+				Console.WriteLine(a);
+			}
+			Console.ReadKey();
+			Console.WriteLine("Oh, good, now you can see how to use the for loop in c sharp");
+			for(double b = 2; b < 3; b+=0.01)
+			{
+				Console.WriteLine(b);
+			}
+			string obj = Console.ReadLine();
+			Console.WriteLine(obj);
+			Console.ReadKey();
+		}
+	}
+}
